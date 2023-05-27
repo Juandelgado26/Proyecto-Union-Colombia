@@ -27,7 +27,7 @@ function validarCredenciales() {
 
   // Buscar el usuario en el JSON logica que veremos 
   for (var i = 0; i < users.length; i++) {
-    if (users[i].usuario == username ) { //TAREA - && users[i].contraseña === contraseña) {
+    if (users[i].usuario == username && users[i].contraseña === contraseña) {//TAREA - 
       usuarioValido = true;
     }
   }
@@ -42,7 +42,9 @@ function alertaCredeciales(event) {
   
   if (validarCredenciales() == true) { //si la funcion validarCredenciales es true
     alert("¡Inicio de sesión exitoso!");
-    alert("Contraseña incorrecta");
+  }
+  if (validarCredenciales() == false) { //si la funcion validarCredenciales es true
+    alert("¡Contraseña incorrecta!");
   }
 
   // TAREA - agregar if en caso de false
